@@ -87,7 +87,6 @@ form.addEventListener("submit", (event) => {
 
     cardsContainer.appendChild(card);
 
-    
 
     
     deleteButton.addEventListener("click", () => {
