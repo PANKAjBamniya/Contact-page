@@ -5,9 +5,13 @@ let email = document.querySelector("#email");
 let message = document.querySelector("#message");
 let cardsContainer = document.querySelector(".cards-container");
 
+const loadButton = 
+	document.getElementById('loadButton'); 
+const loader = 
+	document.getElementById('loader'); 
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    
 
     let card = document.createElement("div");
     card.className = "card";
@@ -93,6 +97,27 @@ form.addEventListener("submit", (event) => {
         card.remove();  
     });
 
-    
+    loadButton.disabled = true; 
+	loader.style.display = 'inline-block'; 
+
+	setTimeout(() => { 
+	
+		// Restore the button state 
+		//after the operation is done 
+		loadButton.disabled = false; 
+		loader.style.display = 'none'; 
+		demoForm.reset(); 
+	}, 2000); 
+
     form.reset();
 });
+
+
+
+
+// loadButton.addEventListener('click', () => { 
+
+// 	// Disable the button 
+// 	// and prevent further clicks 
+	
+// });
